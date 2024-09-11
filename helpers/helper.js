@@ -4,24 +4,25 @@ import { execSync } from "child_process";
 import { capitalizeFirstLetter } from "../utils/index.js";
 
 // Helper function to copy files
-function copyFiles(sourceDir, targetDir, files) {
+function copyFiles(srcDir, destDir, files) {
   files.forEach((file) => {
-    const sourceFile = path.join(sourceDir, file);
-    const targetFile = path.join(targetDir, file);
-    if (fs.existsSync(sourceFile)) {
-      fs.copyFileSync(sourceFile, targetFile);
+    const srcFilePath = path.join(srcDir, file);
+    const destFilePath = path.join(destDir, file);
+
+    if (fs.existsSync(srcFilePath)) {
+      fs.copySync(srcFilePath, destFilePath);
     } else {
-      console.error(`Error: ${sourceFile} does not exist!`);
+      console.warn(`Warning: ${srcFilePath} does not exist!`);
     }
   });
 }
 
 // Helper function to copy directories
-function copyDirectory(sourceDir, targetDir) {
-  if (fs.existsSync(sourceDir)) {
-    fs.copySync(sourceDir, targetDir);
+function copyDirectory(srcDir, destDir) {
+  if (fs.existsSync(srcDir)) {
+    fs.copySync(srcDir, destDir);
   } else {
-    console.error(`Error: Directory ${sourceDir} does not exist!`);
+    console.warn(`Warning: Directory ${srcDir} does not exist!`);
   }
 }
 
