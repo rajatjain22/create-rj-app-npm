@@ -6,15 +6,13 @@ import path from "path";
 import { copyDirectory, copyFiles } from "./helpers/helper.js";
 
 import setupEcommerceProject from "./controller/ecommerce.js";
-import setupBlogProject from "./controller/blog.js";
 
 // Get the directory name of the current module
 const __filename = new URL(import.meta.url).pathname;
 export const __dirname = path.dirname(__filename);
 
 export const projectPaths = {
-  ecom: "_projects/Ecom",
-  blog: "_projects/Blog",
+  ecom: path.join(__dirname, "Templates/Ecom")
 };
 
 // Main function to create the project
@@ -71,7 +69,7 @@ async function createProject() {
   if (projectType === "E-commerce") {
     await setupEcommerceProject(projectDirectory);
   } else if (projectType === "Blog") {
-    setupBlogProject(projectDirectory);
+    // setupBlogProject(projectDirectory);
   }
 
   console.log(`Project ${projectName} created successfully.`);

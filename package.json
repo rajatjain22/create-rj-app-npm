@@ -1,13 +1,14 @@
 {
   "name": "create-rj-app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A CLI to create a custom React app template",
   "type": "module",
   "bin": {
     "create-rj-app": "index.js"
   },
   "scripts": {
-    "dev":"nodemon index.js"
+    "dev":"nodemon index.js",
+    "build":"npm build"
   },
   "dependencies": {
     "commander": "^10.0.0",

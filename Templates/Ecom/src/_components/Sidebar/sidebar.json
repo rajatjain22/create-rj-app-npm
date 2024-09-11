@@ -1,0 +1,12 @@
+[
+  {
+    "icon": "",
+    "label": "Home",
+    "path": "/"
+  },
+  {
+    "icon": "",
+    "label": "Logout",
+    "path": "#"
+  }
+]
