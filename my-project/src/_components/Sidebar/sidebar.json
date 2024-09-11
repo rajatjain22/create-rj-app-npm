@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "",
+    "label": "Home",
+    "path": "/"
+  },
+  {
+    "icon": "",
+    "label": "Logout",
+    "path": "#"
+  },
+  {
+    "icon": "<svg ...>...</svg>",
+    "label": "Cart",
+    "path": "#"
+  }
+]
